@@ -1,14 +1,14 @@
+#Coded By @fthsn90
+
 from tkinter import *
-try:
-    import tkinter
-except:
-    import Tkinter
+import tkinter
 from tkinter.font import Font
 from tkinter import filedialog
 from PIL import ImageTk,Image
 import os
 import PyPDF2
 import tkinter.messagebox
+import pkg_resources.py2_warn
 
 pencere = Tk()
 pencere.geometry("450x300+450+50")
@@ -35,7 +35,9 @@ def birlestirbro():
     except:
         pass
         if not dosyalar:
-            pass           
+            pass
+        else:
+        	print(" ")           
 
 def kayıtyeri():
     global dizinkayıt,dosyakayıt
@@ -45,6 +47,7 @@ def kayıtyeri():
         os.chdir(dizinkayıt)
     except:
         pass
+
 
 def bolbro():
     nereyekayıt = filedialog.asksaveasfilename(initialdir = "//",title = "Nereye kaydedilsin(Save As)",filetypes = (("pdf files","*.pdf"),("all files","*.*")))
