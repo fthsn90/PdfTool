@@ -8,16 +8,21 @@ from PIL import ImageTk,Image
 import os
 import PyPDF2
 import tkinter.messagebox
-import pkg_resources.py2_warn
+"import pkg_resources.py2_warn"
+
+
+yol = os.path.dirname("C:/payton/tkinter/PdfTool")
+
 
 pencere = Tk()
 pencere.geometry("450x300+450+50")
 pencere.config(bg='#252525')
 pencere.title("PDF Bölme ve Birleştirme- Pdf Split and Combine")
-pencere.iconphoto(False, ImageTk.PhotoImage(Image.open("pdf.png")))
-dosyapic = ImageTk.PhotoImage(Image.open("dosya.png"))
-kayitpic = ImageTk.PhotoImage(Image.open("kayit.png"))
+pencere.iconphoto(False, ImageTk.PhotoImage(Image.open(yol +"/" +"pdf.png")))
+dosyapic = ImageTk.PhotoImage(Image.open(yol +"/" + "dosya.png"))
+kayitpic = ImageTk.PhotoImage(Image.open(yol +"/" +"kayit.png"))
 titlefont = Font(size=15,family='Bahnschrift')
+
 
 menubar = Menu(pencere)
 pencere.config(menu=menubar)
@@ -46,7 +51,7 @@ def kayıtyeri():
         dizinkayıt,dosyakayıt = os.path.split(nereyekayıt)
         os.chdir(dizinkayıt)
     except:
-        pass
+        print("sadasd")
 
 
 def bolbro():
